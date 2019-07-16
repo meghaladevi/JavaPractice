@@ -1,4 +1,4 @@
-package designPatterns.Singleton;
+package designPatterns.Creational.designPatterns.Creational.Singleton;
 
 import java.io.ObjectStreamException;
 import java.io.Serializable;

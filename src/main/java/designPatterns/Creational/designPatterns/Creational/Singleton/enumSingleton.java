@@ -1,4 +1,4 @@
-package designPatterns.Singleton;
+package designPatterns.Creational.designPatterns.Creational.Singleton;
 
 /**
  * Created by shanmm5 on 16-07-2019.

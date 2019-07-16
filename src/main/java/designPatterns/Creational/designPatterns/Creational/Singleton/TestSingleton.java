@@ -1,6 +1,4 @@
-package designPatterns.Singleton;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+package designPatterns.Creational.designPatterns.Creational.Singleton;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
@@ -23,7 +21,7 @@ public class TestSingleton {
         System.out.println("###### Reflection ######");
         //Reflection
         try{
-            Class clazz = Class.forName("designPatterns.Singleton.Singleton");
+            Class clazz = Class.forName("designPatterns.Creational.designPatterns.Creational.Singleton.Singleton");
             Constructor<Singleton> singletonConstructor = clazz.getDeclaredConstructor();
             singletonConstructor.setAccessible(true);
             Singleton sReflection = singletonConstructor.newInstance();
@@ -44,13 +42,14 @@ public class TestSingleton {
 
         //Serialization
         System.out.println("###### Serialization and DeSerialization ######");
+        String fileName = "S2.ser";
         try {
             ObjectOutputStream oos = new ObjectOutputStream
-                    (new FileOutputStream("C:\\CFD\\Meghalas Data\\Meghala_Java_Workspace\\SerializedObject\\S2.ser"));
+                    (new FileOutputStream(fileName));
             oos.writeObject(s2);
 
             ObjectInputStream ois = new ObjectInputStream(
-                    new FileInputStream("C:\\CFD\\Meghalas Data\\Meghala_Java_Workspace\\SerializedObject\\S2.ser"));
+                    new FileInputStream(fileName));
             Singleton sDeserialized = (Singleton)ois.readObject();
             print("sDeserialized" , sDeserialized);
         } catch (Exception e) {
